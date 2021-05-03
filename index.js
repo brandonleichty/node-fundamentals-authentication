@@ -17,11 +17,15 @@ async function startApp() {
       root: path.join(__dirname, "public"),
     });
 
-    app.get("/", {}, (request, reply) => {
-      reply.send({
-        data: "Hello world",
-      });
-    });
+    app.post("/api/register", {}, (request, reply) => {
+      console.log("request", request.body.email, request.body.password);
+    })
+
+    // app.get("/", {}, (request, reply) => {
+    //   reply.send({
+    //     data: "Hello world",
+    //   });
+    // });
 
     await app.listen(3000, (error, address) => {
       console.log(`🚀 Server listening on port: ${address}`);
