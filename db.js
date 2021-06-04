@@ -4,7 +4,10 @@ const { MongoClient } = mongo;
 
 const url = process.env.MONGO_URL;
 
-export const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+export const client = new MongoClient(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 export async function connectDb() {
   try {
